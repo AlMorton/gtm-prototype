@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Prototype — Home</title>
+  <meta name="description" content="A simple site for testing Google Tag Manager." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Tag Manager -->
+  <!-- TODO: replace GTM-XXXXXXX with your real container ID (find/replace across all .html files) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a class="brand" href="index.html">GTM Prototype</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Test Google Tag Manager Here</h1>
+      <p>A minimal site for wiring up and verifying your GTM container, tags, triggers, and dataLayer events.</p>
+      <button id="cta-button" class="btn" data-cta="hero">Track This Click</button>
+    </section>
+
+    <section class="features">
+      <h2>What you can test</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Page views</h3>
+          <p>Navigate between Home, About, and Contact to fire pageview tags.</p>
+        </div>
+        <div class="card">
+          <h3>Click events</h3>
+          <p>The button above pushes a custom <code>cta_click</code> event to the dataLayer.</p>
+        </div>
+        <div class="card">
+          <h3>Outbound links</h3>
+          <p><a href="https://example.com" id="outbound-link" target="_blank" rel="noopener">This external link</a> pushes an <code>outbound_click</code> event.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>GTM Prototype · built for testing</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

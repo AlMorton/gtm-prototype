@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Prototype — About</title>
+  <meta name="description" content="About this GTM testing site." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Tag Manager -->
+  <!-- TODO: replace GTM-XXXXXXX with your real container ID (find/replace across all .html files) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a class="brand" href="index.html">GTM Prototype</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>About</h1>
+      <p>This is a throwaway prototype site whose only job is to give Google Tag Manager something to attach to. Use it to validate your container setup before rolling tags out to a real site.</p>
+    </section>
+
+    <section class="features">
+      <h2>How to verify GTM is working</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Preview mode</h3>
+          <p>In GTM, click <strong>Preview</strong> and enter this site's URL to open Tag Assistant.</p>
+        </div>
+        <div class="card">
+          <h3>2. Watch the dataLayer</h3>
+          <p>Open DevTools → Console and type <code>dataLayer</code> to inspect pushed events.</p>
+        </div>
+        <div class="card">
+          <h3>3. Trigger events</h3>
+          <p>Click buttons and submit the contact form, then confirm tags fire in Tag Assistant.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>GTM Prototype · built for testing</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
