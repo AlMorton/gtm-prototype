@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Prototype — Cart</title>
+  <meta name="description" content="Mock cart for testing GTM ecommerce events." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MM4X8CNK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM4X8CNK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a class="brand" href="index.html">GTM Prototype</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="active">Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="account-link">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Cart</h1>
+      <p>Loading this page pushes <code>view_cart</code>; removing an item pushes <code>remove_from_cart</code>.</p>
+    </section>
+
+    <section>
+      <p id="cart-empty" class="empty-state" hidden>Your cart is empty. <a href="shop.html">Go to the shop</a>.</p>
+      <table id="cart-table" class="cart-table">
+        <thead>
+          <tr><th>Item</th><th>Qty</th><th>Total</th><th></th></tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+        <tfoot>
+          <tr><th colspan="2">Subtotal</th><th id="cart-total"></th><th></th></tr>
+        </tfoot>
+      </table>
+      <p class="actions"><a href="checkout.html" id="checkout-button" class="btn">Proceed to checkout</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>GTM Prototype · built for testing</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

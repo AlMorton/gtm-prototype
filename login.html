@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Prototype — Login</title>
+  <meta name="description" content="Mock login for testing GTM login events." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MM4X8CNK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM4X8CNK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a class="brand" href="index.html">GTM Prototype</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="account-link" class="active">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Login</h1>
+      <p>Mock login — any email and password work. Pushes a <code>login</code> event and sets <code>user_id</code> in the dataLayer. Don't use real credentials.</p>
+    </section>
+
+    <section class="form-section" id="login-section">
+      <form id="login-form" class="stack-form" novalidate>
+        <label>
+          Email
+          <input type="email" name="email" id="login-email" autocomplete="off" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" id="login-password" autocomplete="off" required />
+        </label>
+        <button type="submit" class="btn">Log in</button>
+      </form>
+    </section>
+
+    <section class="form-section" id="account-section" hidden>
+      <div class="card">
+        <h3>Logged in</h3>
+        <p>Email: <span id="account-email"></span><br />User ID: <code id="account-user-id"></code></p>
+      </div>
+      <p class="actions">
+        <a href="shop.html" class="btn">Go to shop</a>
+        <button type="button" id="logout-button" class="btn btn-secondary">Log out</button>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>GTM Prototype · built for testing</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Prototype — Checkout</title>
+  <meta name="description" content="Mock checkout for testing GTM ecommerce events." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MM4X8CNK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM4X8CNK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <a class="brand" href="index.html">GTM Prototype</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="account-link">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Checkout</h1>
+      <p>Requires login. Pushes <code>begin_checkout</code> on load, then <code>add_shipping_info</code>, <code>add_payment_info</code> and <code>purchase</code>. No payment is taken.</p>
+    </section>
+
+    <section class="form-section">
+      <p id="checkout-empty" class="empty-state" hidden>Your cart is empty. <a href="shop.html">Go to the shop</a>.</p>
+
+      <form id="shipping-form" class="stack-form" novalidate hidden>
+        <h2>1. Shipping</h2>
+        <p id="checkout-summary" class="muted"></p>
+        <label>
+          Full name
+          <input type="text" name="full_name" id="ship-name" required />
+        </label>
+        <label>
+          Address
+          <input type="text" name="address" id="ship-address" required />
+        </label>
+        <label>
+          Shipping method
+          <select name="shipping_tier" id="ship-tier">
+            <option value="standard">Standard (free)</option>
+            <option value="express">Express (¥800)</option>
+          </select>
+        </label>
+        <button type="submit" class="btn">Continue to payment</button>
+      </form>
+
+      <form id="payment-form" class="stack-form" novalidate hidden>
+        <h2>2. Payment</h2>
+        <label>
+          Payment method
+          <select name="payment_type" id="payment-type">
+            <option value="credit_card">Credit card</option>
+            <option value="paypal">PayPal</option>
+            <option value="konbini">Konbini</option>
+          </select>
+        </label>
+        <p class="muted">This is a mock — no payment details are collected.</p>
+        <button type="submit" class="btn">Place order</button>
+      </form>
+
+      <div id="order-confirmation" class="form-status" hidden>
+        <h2>Order placed 🎉</h2>
+        <p>Transaction ID: <code id="order-id"></code></p>
+        <p>A <code>purchase</code> event was pushed to the dataLayer. <a href="shop.html">Continue shopping</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>GTM Prototype · built for testing</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
